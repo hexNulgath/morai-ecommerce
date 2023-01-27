@@ -1,0 +1,15 @@
+#cart-navbar{
+    width: 40px;
+    margin: 3%;
+}
+
+#number-of-items{
+  position: absolute;
+  font-size: 20px;
+  width: 25px;
+  height: 25px;
+  text-align:center;
+  background-color: rgb(192, 33, 33);
+  border-radius: 50%;
+  color: whitesmoke;
+}
