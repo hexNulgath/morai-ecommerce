@@ -5,23 +5,19 @@ const Navbar = ({ children }) => {
   let [openMenu, setOpenMenu] = useState(false);
 
   let Categories = [
-    { name: "HOME", link: "/" },
-    { name: "SERVICE", link: "/" },
-    { name: "ABOUT", link: "/" },
-    { name: "BLOG'S", link: "/" },
-    { name: "CONTACT", link: "/" },
+    { name: "Stationery", link: "/" },
+    { name: "Prints", link: "/" },
+    { name: "Stickers", link: "/" },
+    { name: "Pins", link: "/" },
+    { name: "Merch", link: "/" },
+    { name: "3D Models", link: "/" },
   ];
 
   return (
     <div className="shadow-md w-full fixed top-0 left-0">
-      <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
-        <div
-          className="font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
-      text-gray-800"
-        >
-          <span className="text-3xl text-indigo-600 mr-1 pt-2">
-            <img src="./img/logo.png" alt="logo" />
-          </span>
+      <div className="md:flex items-center justify-between  bg-[#f7f3ed] py-4 md:px-10 px-7">
+        <div className="font-bold text-2xl flex items-center">
+          <img src="./img/logo-nav.png" alt="logo" />
         </div>
         <div
           onClick={() => setOpenMenu(!openMenu)}
@@ -33,21 +29,23 @@ const Navbar = ({ children }) => {
           ></img>
         </div>
         <ul
-          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
-            openMenu ? "top-20 " : "top-[-490px]"
+          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static  md:drop-shadow-none  bg-[#f7f3ed] md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+            openMenu ? "top-20 drop-shadow" : "top-[-490px]"
           }`}
         >
           {Categories.map((link) => (
-            <li key={link.name} className="md:ml-8 text-xl md:my-0 my-7">
+            <li key={link.name} className="md:ml-20 text-xl md:my-0 my-7">
               <a
                 href={link.link}
-                className="text-gray-800 hover:text-gray-400 duration-500"
+                className="text-gray-800 hover:text-purple-600 duration-500 font-VVDSRashfield"
               >
                 {link.name}
               </a>
             </li>
           ))}
-          <li className="md:ml-8 text-xl md:my-0 my-7">{children}</li>
+          <li className="md:ml-20 mb-10 md:mb-auto text-xl md:my-0 mr-20 cursor-pointer">
+            {children}
+          </li>
         </ul>
       </div>
     </div>

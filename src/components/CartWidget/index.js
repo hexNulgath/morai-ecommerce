@@ -3,19 +3,19 @@ import "./styles.css";
 
 const CartWidget = ({ numberOfItems }) => {
   return (
-    <div>
+    <div className="relative ">
+      <div
+        id="number-of-items"
+        className="absolute left-9 -top-2 md:-top-5 md:-right-12 md:left-auto z-[1]"
+      >
+        {numberOfItems}
+      </div>
       <img
         src="./img/cart-icon.svg"
         alt="cart"
         id="cart-navbar"
-        className="md:relative fixed"
+        className="absolute object-cover"
       />
-      <div
-        id="number-of-items"
-        className="md:top-5 md:right-5 absolute top-70 left-20 md:left-auto "
-      >
-        {numberOfItems}
-      </div>
     </div>
   );
 };
