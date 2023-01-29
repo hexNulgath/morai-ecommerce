@@ -5,16 +5,14 @@ const CartWidget = ({ numberOfItems }) => {
   return (
     <div className="relative ">
       <div
-        id="number-of-items"
-        className="absolute left-9 -top-2 md:-top-5 md:-right-12 md:left-auto z-[1]"
+        className="absolute left-9 -top-2 md:-top-5 md:-right-12 md:left-auto z-[1] number-of-items"
       >
         {numberOfItems}
       </div>
       <img
         src="./img/cart-icon.svg"
         alt="cart"
-        id="cart-navbar"
-        className="absolute object-cover"
+        className="absolute object-cover cart-navbar"
       />
     </div>
   );
