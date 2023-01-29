@@ -1,9 +1,9 @@
-#cart-navbar{
+.cart-navbar{
     width: 40px;
     margin: 3%;
 }
 
-#number-of-items{
+.number-of-items{
   position: absolute;
   font-size: 20px;
   width: 25px;
