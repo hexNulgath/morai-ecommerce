@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./styles.css";
+import CartWidget from "../CartWidget";
 
-const Navbar = ({ children }) => {
+const Navbar = ({ props }) => {
   let [openMenu, setOpenMenu] = useState(false);
 
-  let Categories = [
+  let categories = [
     { name: "Stationery", link: "/" },
     { name: "Prints", link: "/" },
     { name: "Stickers", link: "/" },
@@ -33,7 +34,7 @@ const Navbar = ({ children }) => {
             openMenu ? "top-20 drop-shadow" : "top-[-490px]"
           }`}
         >
-          {Categories.map((link) => (
+          {categories.map((link) => (
             <li key={link.name} className="md:ml-20 text-xl md:my-0 my-7">
               <a
                 href={link.link}
@@ -44,7 +45,7 @@ const Navbar = ({ children }) => {
             </li>
           ))}
           <li className="md:ml-20 mb-10 md:mb-auto text-xl md:my-0 mr-20 cursor-pointer">
-            {children}
+            <CartWidget numberOfItems={1}></CartWidget>{" "}
           </li>
         </ul>
       </div>
