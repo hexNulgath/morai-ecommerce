@@ -1,17 +1,23 @@
 import "./App.css";
-import ItemListContainer from "./components/ItemListContainer/index.js";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/index.js";
-import ItemCount from "./components/ItemCount/index.js";
+
+import Home from "./pages/home";
+import ProductDetail from "./pages/productdetail";
+import Categories from "./pages/categories";
 
 function App() {
   return (
-    <div>
+    <Router>
       <div>
         <Navbar />
-        <ItemListContainer greetings={"Welcome to Morai store"} />
-        <ItemCount />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/detail/:id" element={<ProductDetail />} />
+          <Route path="/categories/:category" element={<Categories />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 }
 

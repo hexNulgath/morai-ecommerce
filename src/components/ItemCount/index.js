@@ -1,38 +1,39 @@
 import React, { useState } from "react";
 import "./styles.css";
+import minus from "../../resources/minus.png";
+import plus from "../../resources/plus.png";
 
-const ItemCount = ({ itemName = "item" }) => {
+const ItemCount = ({ itemStock }) => {
   let [itemCount, setItemCount] = useState(0);
-  let itemStock = 10;
 
   function onAdd(itemCount) {
     //do something
   }
 
   return (
-    <div className="absolute grid grid-rows-1 grid-flow-col">
-      <div className=" m-10 bg-stone-200 p-10 rounded-lg">
-        <p className="pb-5 font-VVDSRashfield">{itemName}</p>
-        <div class="grid grid-rows-1 grid-flow-col bg-stone-100 rounded-lg border-stone-500 border-2">
-          <button
-            onClick={itemCount === 0 ? null : () => setItemCount(itemCount - 1)}
-          >
-            <img src="./img/minus.png" alt="remove item" />
-          </button>
+    <div className="absolute grid grid-rows-1 grid-flow-col my-10">
+      <div class="grid grid-rows-1 grid-flow-col bg-white rounded-lg border-stone-500 border-2">
+        <button
+          type="button"
+          onClick={itemCount === 0 ? null : () => setItemCount(itemCount - 1)}
+        >
+          <img src={minus} alt="remove item" />
+        </button>
 
-          <p className="pr-10 pl-10 pt-5 ">{itemCount}</p>
-          <button
-            onClick={
-              itemCount === itemStock ? null : () => setItemCount(itemCount++)
-            }
-          >
-            <img src="./img/plus.png" alt="add item" />
-          </button>
-        </div>
+        <p className="pr-5 pl-5 pt-5 ">{itemCount}</p>
+        <button
+          type="button"
+          onClick={
+            itemCount === itemStock ? null : () => setItemCount(itemCount++)
+          }
+        >
+          <img src={plus} alt="add item" />
+        </button>
       </div>
+
       <div>
         <button
-          className=" m-10 p-3 font-VVDSRashfield bg-stone-100 rounded-lg border-stone-500 border-2"
+          className=" ml-20  p-5 font-VVDSRashfield bg-white rounded-lg border-stone-500 border-2"
           onClick={itemStock === 0 ? null : onAdd(itemCount)}
         >
           agregar al carrito

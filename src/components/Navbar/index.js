@@ -1,25 +1,30 @@
 import React, { useState } from "react";
 import "./styles.css";
 import CartWidget from "../CartWidget";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ props }) => {
   let [openMenu, setOpenMenu] = useState(false);
 
   let categories = [
-    { name: "Stationery", link: "/" },
-    { name: "Prints", link: "/" },
-    { name: "Stickers", link: "/" },
-    { name: "Pins", link: "/" },
-    { name: "Merch", link: "/" },
-    { name: "3D Models", link: "/" },
+    { name: "smartphones", link: "/categories/smartphones" },
+    { name: "laptops", link: "/categories/laptops" },
+    { name: "fragrances", link: "/categories/fragrances" },
+    { name: "skincare", link: "/categories/skincare" },
+    { name: "groceries", link: "/categories/furniture" },
+    { name: "tops", link: "/categories/tops" },
   ];
 
   return (
-    <div className="shadow-md w-full fixed top-0 left-0">
-      <div className="md:flex items-center justify-between  bg-[#f7f3ed] py-4 md:px-10 px-7">
-        <div className=" flex items-center">
-          <img src="./img/logo-nav.png" alt="logo" />
-        </div>
+    <div className="shadow-md w-full fixed top-0 left-0 z-40">
+      <div className="md:flex items-center justify-between  bg-[#f7f3ed] py-4 md:px-10 px-7 z-40">
+        <Link to={"/"} className=" flex items-center">
+          <img
+            src="./img/logo-nav.png"
+            alt="logo"
+            className="h-20	 max-w-140px"
+          />
+        </Link>
         <div
           onClick={() => setOpenMenu(!openMenu)}
           className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
@@ -27,6 +32,7 @@ const Navbar = ({ props }) => {
           <img
             src={openMenu ? "./img/close.png" : "./img/menu.png"}
             alt="close menu"
+            className="h-20	"
           ></img>
         </div>
         <ul
@@ -36,12 +42,12 @@ const Navbar = ({ props }) => {
         >
           {categories.map((link) => (
             <li key={link.name} className="md:ml-20 text-xl md:my-0 my-7">
-              <a
-                href={link.link}
+              <Link
+                to={link.link}
                 className="text-gray-800 hover:text-purple-600 duration-500 font-VVDSRashfield"
               >
                 {link.name}
-              </a>
+              </Link>
             </li>
           ))}
           <li className="md:ml-20 mb-10 md:mb-auto text-xl md:my-0 mr-20 cursor-pointer">
