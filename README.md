@@ -27,3 +27,7 @@ The app allows the user to navigate through e-commerce product items sourced by 
 ## Cart
 ![image](https://user-images.githubusercontent.com/73831621/224222885-0937d441-40e8-4c57-bd95-4798848637ad.png)
 
+
+
+https://user-images.githubusercontent.com/73831621/224393299-b4930188-8de0-40d3-b02f-6e08b95378f2.mp4
+
