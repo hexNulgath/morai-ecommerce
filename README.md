@@ -1,6 +1,6 @@
 # Final proyect Coder House E-commerce
 
-The project was created using: react, tailwind, and fire base.
+The project was created using: react, tailwind, formik and fire base.
 
 ##  Scripts
 
