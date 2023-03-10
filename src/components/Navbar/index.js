@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./styles.css";
 import CartWidget from "../CartWidget";
 import { Link } from "react-router-dom";
 
@@ -7,12 +6,11 @@ const Navbar = ({ props }) => {
   let [openMenu, setOpenMenu] = useState(false);
 
   let categories = [
-    { name: "smartphones", link: "/categories/smartphones" },
-    { name: "laptops", link: "/categories/laptops" },
-    { name: "fragrances", link: "/categories/fragrances" },
-    { name: "skincare", link: "/categories/skincare" },
-    { name: "groceries", link: "/categories/furniture" },
-    { name: "tops", link: "/categories/tops" },
+    { name: "papeleria", link: "/categories/papeleria" },
+    { name: "prints", link: "/categories/prints" },
+    { name: "stickers", link: "/categories/stickers" },
+    { name: "textil", link: "/categories/textil" },
+    { name: "3D prints", link: "/categories/3Dprints" },
   ];
 
   return (
@@ -20,7 +18,7 @@ const Navbar = ({ props }) => {
       <div className="md:flex items-center justify-between  bg-[#f7f3ed] py-4 md:px-10 px-7 z-40">
         <Link to={"/"} className=" flex items-center">
           <img
-            src="./img/logo-nav.png"
+            src="https://firebasestorage.googleapis.com/v0/b/morai-ecommerce.appspot.com/o/logo-nav.png?alt=media&token=770ae378-794b-4e4f-b4e7-f0bd2f035a49"
             alt="logo"
             className="h-20	 max-w-140px"
           />
@@ -30,7 +28,11 @@ const Navbar = ({ props }) => {
           className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
         >
           <img
-            src={openMenu ? "./img/close.png" : "./img/menu.png"}
+            src={
+              openMenu
+                ? "https://firebasestorage.googleapis.com/v0/b/morai-ecommerce.appspot.com/o/close.png?alt=media&token=858a06d3-7866-444b-b5b7-0c127253e09d"
+                : "https://firebasestorage.googleapis.com/v0/b/morai-ecommerce.appspot.com/o/menu.png?alt=media&token=8aed5180-24f3-4985-9993-6ba284a163f2"
+            }
             alt="close menu"
             className="h-20	"
           ></img>
@@ -50,9 +52,12 @@ const Navbar = ({ props }) => {
               </Link>
             </li>
           ))}
-          <li className="md:ml-20 mb-10 md:mb-auto text-xl md:my-0 mr-20 cursor-pointer">
+          <Link
+            className="md:ml-20 mb-10 md:mb-auto text-xl md:my-0 mr-20 cursor-pointer"
+            to="/cart"
+          >
             <CartWidget numberOfItems={1}></CartWidget>{" "}
-          </li>
+          </Link>
         </ul>
       </div>
     </div>
